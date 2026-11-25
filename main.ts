@@ -17,7 +17,7 @@ const charCount = (text: string): number => [...text].length;
 
 function main(): void {
   const chars = charCount(ENTRY);
-  if (chars < 1 || chars > 200 || ENTRY.includes('\n')) {
+  if (chars < 1 || chars > 200 || ENTRY.includes('\n') || ENTRY.includes('\r')) {
     throw new Error(`entry must be one line of 1-200 characters, got ${chars}`);
   }
   fs.mkdirSync(OUT_DIR, { recursive: true });
